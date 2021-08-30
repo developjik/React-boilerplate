@@ -1,0 +1,14 @@
+.bg {
+  background: url('../../bgImg/NotFoundBg.png'), #777;
+}
+
+.bg h3 {
+  margin: 2.5vh 0;
+}
+
+.bg a {
+  padding: 2.5vh 2.5vw;
+  background: #fff;
+  border-radius: 1.5em;
+  font-weight: 700;
+}
