@@ -1,18 +1,10 @@
-import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 
-import PropTypes from 'prop-types';
 import { Box } from '@material-ui/core';
-import { getCookie } from '../../cookie/cookie';
 
-import SignInFormContainer from '../../Container/SignInFormContainer';
+import SignInForm from '../../Components/Login/SignInForm';
 
-function SignIn({ history, setIsLogin }) {
-  useEffect(() => {
-    if (getCookie('accessToken')) {
-      history.push('/');
-    }
-  }, []);
+function SignIn() {
   return (
     <Box
       width="100%"
@@ -23,14 +15,9 @@ function SignIn({ history, setIsLogin }) {
       alignItems="center"
     >
       Sign In
-      <SignInFormContainer setIsLogin={setIsLogin} />
+      <SignInForm />
     </Box>
   );
 }
 
-SignIn.propTypes = {
-  history: PropTypes.node.isRequired,
-  setIsLogin: PropTypes.func.isRequired,
-};
-
-export default withRouter(SignIn);
+export default SignIn;

@@ -17,8 +17,17 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 1.25em;
 }
 
 .navigator a {
   margin: 2.5vw;
+  padding: 1vh 1vw;
+}
+.navigator a.active,
+.navigator a:hover,
+.navigator button:hover {
+  background: #205aff;
+  color: #fff;
+  border-radius: 1em;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -7,9 +8,14 @@ import axios from 'axios';
 import { Box, TextField, Collapse, IconButton } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import CloseIcon from '@material-ui/icons/Close';
-import { setCookie } from '../../cookie/cookie';
 
-function SignInForm({ history, onSetUser, setIsLogin }) {
+import { setCookie } from '../../cookie/cookie';
+import { setUser } from '../../modules/user';
+
+function SignInForm({ history }) {
+  const dispatch = useDispatch();
+  const onSetUser = (data) => dispatch(setUser(data));
+
   const [open, setOpen] = useState(false);
 
   const [inputs, setInputs] = useState({
@@ -35,7 +41,6 @@ function SignInForm({ history, onSetUser, setIsLogin }) {
           secure: true,
           maxAge: 3600,
         });
-        setIsLogin(true);
         history.push('/');
       })
       .catch((error) => {
@@ -98,9 +103,7 @@ function SignInForm({ history, onSetUser, setIsLogin }) {
 }
 
 SignInForm.propTypes = {
-  history: PropTypes.node.isRequired,
-  onSetUser: PropTypes.func.isRequired,
-  setIsLogin: PropTypes.func.isRequired,
+  history: PropTypes.shape({ push: PropTypes.func }).isRequired,
 };
 
 export default withRouter(SignInForm);

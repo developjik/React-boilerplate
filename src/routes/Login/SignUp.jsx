@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Box } from '@material-ui/core';
+
 import SignUpForm from '../../Components/Login/SignUpForm';
 
 function SignUp() {

@@ -1,19 +1,10 @@
-import React, { useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
 
-import PropTypes from 'prop-types';
 import { Box, Typography } from '@material-ui/core';
-import { getCookie } from '../../cookie/cookie';
 
 import ContactForm from '../../Components/Contact/ContactForm';
 
-function Contact({ history, setIsLogin }) {
-  useEffect(() => {
-    if (!getCookie('accessToken')) {
-      setIsLogin(false);
-      history.push('/signIn');
-    }
-  }, []);
+function Contact() {
   return (
     <Box
       width="100%"
@@ -29,9 +20,4 @@ function Contact({ history, setIsLogin }) {
   );
 }
 
-Contact.propTypes = {
-  history: PropTypes.node.isRequired,
-  setIsLogin: PropTypes.func.isRequired,
-};
-
-export default withRouter(Contact);
+export default Contact;
