@@ -15,10 +15,10 @@ function Info() {
       justifyContent="center"
       alignItems="center"
     >
-      <Typography variant="h3">Name : {user.name}</Typography>
-      <Typography variant="h3">ID : {user.id}</Typography>
-      <Typography variant="h3">Email : {user.email}</Typography>
-      <Typography variant="h3">Phone : {user.phone}</Typography>
+      <Typography variant="h5">Name : {user.name}</Typography>
+      <Typography variant="h5">ID : {user.id}</Typography>
+      <Typography variant="h5">Email : {user.email}</Typography>
+      <Typography variant="h5">Phone : {user.phone}</Typography>
     </Box>
   );
 }

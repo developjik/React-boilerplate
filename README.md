@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Developjik's React BoilerPlate(Airbnb Code Style)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 주요 기술
 
-## Available Scripts
+1. react
+2. react-router- dom
+3. redux + react-redux +redux-persist (refresh 해도 redux-persist를 활용해 Session Stoarage에 저장하여 유지)
+4. react-cookie
+5. axios
+6. emailjs-com
+7. react-responsive
+8. material ui
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 로그인 회원 가입 등에 활용 된 Backend Server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+nest.js + postgresql + heroku
+[Backend Server] (https://developjik-nextjs.herokuapp.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## `/` 홈 페이지(메인 페이지)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## '/signIn' 로그인 페이지 / 로그인한 경우 접근 불가
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. 사용자는 ID, Password 입력 후 Login 버튼 Click
+2. axios를 통해 요청하여 Backend Server의 Postgresql DB와 일치하는지 검사 후 accessToken(1시간 제한), User Data 반환
+3. 반환된 accessToken은 cookie에 1시간 동안 저장, User Data는 Redux Store에 저장
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## '/signUp 회원가입 페이지 / 로그인한 경우 접근 불가
 
-### `npm run eject`
+1. 사용자는 정보 입력 후 Register 버튼 Click
+2. axios를 통해 요청하여 Backend Server의 Postgresql DB에 저장
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## '/contact' 개발자에게 이메일 보낼 수 있는 페이지 / 로그인 언헌 경우 접근 불가
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. 사용자는 정보 입력 후 제출 버튼 Click
+2. emailjs-com을 활용하여 개발자에게 메일 가능
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
+## '/info' 회원 정보 페이지 / 로그인 안한 경우 접근 불가
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## max-width:600px 이하 일 때
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Navigation(Menu) => Toggle Menu로 변경

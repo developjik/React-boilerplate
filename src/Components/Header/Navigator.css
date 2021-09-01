@@ -1,33 +1,12 @@
-a {
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 0.5vw;
-}
-
-li {
-  list-style: none;
-}
-
 .logo {
   font-size: 2em;
   font-weight: 900;
 }
-
-.navigator {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.25em;
+.logo a {
+  text-decoration: none;
+  color: #000;
+  letter-spacing: 0.5vw;
 }
-
-.navigator a {
-  margin: 2.5vw;
-  padding: 1vh 1vw;
-}
-.navigator a.active,
-.navigator a:hover,
-.navigator button:hover {
-  background: #205aff;
-  color: #fff;
-  border-radius: 1em;
+.logo a li {
+  list-style: none;
 }
