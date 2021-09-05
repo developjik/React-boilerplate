@@ -1,12 +1,14 @@
 .logo {
   font-size: 2em;
   font-weight: 900;
-}
-.logo a {
   text-decoration: none;
+  letter-spacing: 1vw;
   color: #000;
-  letter-spacing: 0.5vw;
 }
-.logo a li {
+.logo li {
   list-style: none;
+}
+
+.darkMode {
+  color: #fff;
 }

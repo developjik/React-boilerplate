@@ -9,8 +9,6 @@ function Footer() {
     <Box
       height="5vh"
       width="100%"
-      position="fixed"
-      bottom="0"
       display="flex"
       justifyContent="center"
       alignItems="center"

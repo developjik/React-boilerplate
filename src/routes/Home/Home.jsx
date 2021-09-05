@@ -5,7 +5,7 @@ import { Box } from '@material-ui/core';
 function Home() {
   return (
     <Box
-      minHeight="100vh"
+      height="85vh"
       width="100%"
       display="flex"
       justifyContent="center"

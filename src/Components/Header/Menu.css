@@ -1,31 +1,37 @@
-a {
-  text-decoration: none;
-  color: #000;
-  letter-spacing: 0.5vw;
-}
-
-li {
-  list-style: none;
-}
-
 .navigator {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   font-size: 1.25em;
 }
+.navigator a,
+.toggle a {
+  text-decoration: none;
+  color: #000;
+}
+.dark a {
+  color: #fff;
+}
 
 .navigator a li,
-.navigator button {
+.navigator button,
+.toggle a li,
+.toggle button {
+  list-style: none;
   margin: 2.5vw;
-  padding: 1.5vh 1vw;
+  padding: 0.5vh 0.5vw;
 }
 
 .navigator a li:hover,
 .navigator button:hover {
-  background: #205aff;
+  background: #000;
   color: #fff;
   border-radius: 1em;
+}
+.dark a li:hover,
+.dark button:hover {
+  background: #fff;
+  color: #000;
 }
 
 .toggle {
@@ -40,6 +46,7 @@ li {
   height: 100vh;
   background: #777;
   transition: 0.5s;
+  z-index: 10;
 }
 .toggle.active {
   left: 0;
@@ -47,11 +54,11 @@ li {
 .toggle a,
 .toggle button {
   color: #fff;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 .toggle a:hover,
 .toggle button:hover {
   background: #fff;
   color: #000;
-  padding: 1.5vh 1vw;
+  border-radius: 1em;
 }

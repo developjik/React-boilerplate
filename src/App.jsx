@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import { createTheme, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Navigator from './Components/Header/Navigator';
 import Home from './routes/Home/Home';
 import Contact from './routes/Contact/Contact';
@@ -14,28 +15,43 @@ import AuthRoute from './routes/AuthRoute';
 import NoAuthRoute from './routes/NoAuthRoute';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const theme = createTheme({
+    palette: {
+      type: darkMode ? 'dark' : 'light',
+    },
+  });
+
   return (
-    <BrowserRouter>
-      <Navigator />
-      <Switch>
-        <Route path="/" component={(props) => <Home props={props} />} exact />
-        <AuthRoute
-          path="/contact"
-          component={(props) => <Contact props={props} />}
-        />
-        <NoAuthRoute
-          path="/signIn"
-          component={(props) => <SignIn props={props} />}
-        />
-        <NoAuthRoute
-          path="/signUp"
-          component={(props) => <SignUp props={props} />}
-        />
-        <AuthRoute path="/info" component={(props) => <Info props={props} />} />
-        <Route component={(props) => <NotFound props={props} />} />
-      </Switch>
-      <Footer />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <Navigator darkMode={darkMode} setDarkMode={setDarkMode} />
+
+        <Switch>
+          <Route path="/" component={(props) => <Home props={props} />} exact />
+          <AuthRoute
+            path="/contact"
+            component={(props) => <Contact props={props} />}
+          />
+          <NoAuthRoute
+            path="/signIn"
+            component={(props) => <SignIn props={props} />}
+          />
+          <NoAuthRoute
+            path="/signUp"
+            component={(props) => <SignUp props={props} />}
+          />
+          <AuthRoute
+            path="/info"
+            component={(props) => <Info props={props} />}
+          />
+          <Route component={(props) => <NotFound props={props} />} />
+        </Switch>
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

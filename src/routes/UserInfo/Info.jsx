@@ -9,7 +9,7 @@ function Info() {
   return (
     <Box
       width="100%"
-      height="100vh"
+      minHeight="85vh"
       display="flex"
       flexDirection="column"
       justifyContent="center"
