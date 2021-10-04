@@ -27,7 +27,7 @@ function Navigator({ darkMode, setDarkMode }) {
       >
         <Box display="flex" alignItems="center">
           <Link to="/" id="#" className={darkMode ? 'logo darkMode' : 'logo'}>
-            <li>Logo</li>
+            <li>COVID-19</li>
           </Link>
         </Box>
         <Box display="flex" alignItems="center">
