@@ -13,7 +13,6 @@ import Footer from './Components/Footer/Footer';
 
 import AuthRoute from './routes/AuthRoute';
 import NoAuthRoute from './routes/NoAuthRoute';
-import Test from './routes/Test/Test';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,7 +47,6 @@ function App() {
             path="/info"
             component={(props) => <Info props={props} />}
           />
-          <Route path="/test" component={(props) => <Test props={props} />} />
           <Route component={(props) => <NotFound props={props} />} />
         </Switch>
         <Footer />
