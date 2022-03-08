@@ -34,7 +34,10 @@ function SignInForm({ history }) {
   const onSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post('https://developjik-nextjs.herokuapp.com/auth/signin', inputs)
+      .post(
+        'https://developjik-boilerplate-backend.herokuapp.com/auth/signin',
+        inputs,
+      )
       .then((res) => {
         onSetUser(res.data.user);
         setCookie('accessToken', res.data.accessToken, {

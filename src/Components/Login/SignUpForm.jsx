@@ -62,7 +62,10 @@ function SignUpForm({ history }) {
         phone: inputs.phone,
       };
       await axios
-        .post('https://developjik-nextjs.herokuapp.com/auth/signup', data)
+        .post(
+          'https://developjik-boilerplate-backend.herokuapp.com/auth/signup',
+          data,
+        )
         .then((res) => {
           console.log(res.data);
           history.push('/');
